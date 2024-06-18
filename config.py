@@ -38,6 +38,11 @@ intro_para = " "
 instructions = '''
 **Instructions for educators:**
 The goal of this app is to help students learn and assess their knowledge of core course concepts and examples.
+
+Your role in creating this app is to give it a list of terms and definitions. These terms will be seen by students and will give them an opportunity to practice utilizing and explaining the term. They will input their knowledge into the chat box and ChatGTP will give them helpful notes for their understanding.
+
+Now you can create your own app by following the instructions below.
+
 1. Please visit the following link to see full instructions to copy this app so you can customize it and use it in your classroom.
 2. You can customize the terms in the terms_template.csv file. You can delete everything below the first row and add in your own terms in the first column. You can open and edit it in Excel, Google Sheets, or any text editor. Make sure that you don't change the file extension from csv. Once done, upload it below. The app will use your terms for the study session.
 3. These instructions are formatted in Markdown. You can customize them as needed. If you don't know what Markdown is, it's a simple way to format text on the web. You can learn more about it [here](https://www.markdownguide.org/getting-started/).
@@ -52,12 +57,7 @@ The goal of this app is to help you learn and and assess your knowledge of core 
 3. Choose to either answer immediately or dive into your notes or textbook to refresh your memory.
 4. Write a simple definition of the selected term. Try to include a real-world example and any other associations you might need to know for an exam. 
 5. Please follow-up with questions. If you don't know something, ask for a simple definition or example! **Have a conversation!**
-
-
-**Instructions for Grace:**
-1. get an API key so that the app is fully functional and working
-2. start making the videos on how to do everything
-3. eat breakfast'''
+'''
 
 # The title of the sidebar
 sidebar_title = "Have your own terms to study?"
@@ -76,7 +76,7 @@ warning_message = "**ChatGPT can make errors and does not replace verified and r
 ### PROMPTS
 
 # Below is the initial prompt that the AI will use to start the conversation with the user. The user will not see this prompt.
-initial_prompt = "You are an assistant knowledgeable in university-level biology helping a student in a lower division college course. Provide concise and accurate responses to questions or definitions related to biology questions the user asks. The user will be responding to the following instructions set in single quotations: (start of instructions to the user) 'The goal of this app is to help you learn and and assess your knowledge of core course concepts and examples. 1. Click the button below to show a random course term. 2. *Pause and think for 30 seconds.* What is everything you associate with this term? 3. Choose to either answer immediately or dive into your notes or textbook to refresh your memory.4. Write a simple definition of the selected term. Try to include a real-world example and any other associations you might need to know for an exam. 5. Please follow-up with questions. **Have a conversation!**' (end of instructions to the user). Provide formative feedback in a clear, succinct way. Mention any factual errors in the response. Employ the Socratic method, giving the user hints and guiding questions with the goal of getting the user to provide information that was not in the initial user response. While using the socratic method, it is important to help the user identify common misconceptions, especially if they write one in their chat message. You may also include basic metaphors and analogies in your response as long as they are accurate and not misleading or biased heavily toward a native English speaker or American. Do NOT use extraneous language, such as 'your answer lacks a detailed explanation'. Keep in mind that the user's response is limited to 500 characters, so there is no expectation that the correct answer is more than a short paragraph. Try and keep the system's response within 1000 characters. Make sure to always to provide feedback for each part of the user's input. Do not provide advice, such as: 'Remember, the more specific and detailed your response, the better your understanding of the concept will be.' Your secondary goal as the chat progresses is to help users explicitly think about their learning and study process as well as best practices in information and data literacy. If they write anything unrelated to topics reasonably covered in an undergraduate biology course, please respond with: I appreciate your question, but if you would like to take a break from studying, might I suggest a tall glass of water and mindful relaxation."
+initial_prompt = "You are an assistant knowledgeable in university-level biology helping a student in a lower division college course. Provide concise and accurate responses to questions or definitions related to biology questions the user asks. The user will be responding to the following instructions set in single quotations: (start of instructions to the user) 'The goal of this app is to help you learn and assess your knowledge of core course concepts and examples. 1. Click the button below to show a random course term. 2. *Pause and think for 30 seconds.* What is everything you associate with this term? 3. Choose to either answer immediately or dive into your notes or textbook to refresh your memory.4. Write a simple definition of the selected term. Try to include a real-world example and any other associations you might need to know for an exam. 5. Please follow-up with questions. **Have a conversation!**' (end of instructions to the user). Provide formative feedback in a clear, succinct way. Mention any factual errors in the response. Employ the Socratic method, giving the user hints and guiding questions with the goal of getting the user to provide information that was not in the initial user response. While using the socratic method, it is important to help the user identify common misconceptions, especially if they write one in their chat message. You may also include basic metaphors and analogies in your response as long as they are accurate and not misleading or biased heavily toward a native English speaker or American. Do NOT use extraneous language, such as 'your answer lacks a detailed explanation'. Keep in mind that the user's response is limited to 500 characters, so there is no expectation that the correct answer is more than a short paragraph. Try and keep the system's response within 1000 characters. Make sure to always to provide feedback for each part of the user's input. Do not provide advice, such as: 'Remember, the more specific and detailed your response, the better your understanding of the concept will be.' Your secondary goal as the chat progresses is to help users explicitly think about their learning and study process as well as best practices in information and data literacy. If they write anything unrelated to topics reasonably covered in an undergraduate biology course, please respond with: I appreciate your question, but if you would like to take a break from studying, might I suggest a tall glass of water and mindful relaxation."
 
 # Below is the follow-up prompt that the AI will use once the user has typed a message. The user will not see this prompt.
 # DO NOT REMOVE/EDIT anything outside of the triple quotations or anything inside the curly braces
@@ -104,5 +104,16 @@ resources = [
         "title": "Scitable by Nature Education",
         "url": "https://www.nature.com/scitable",
         "description": "A free science library and personal learning tool focusing on genetics, cell biology, and related topics. It offers articles, eBooks, and educational resources from experts and is part of Nature Education."
+    },
+    {
+        "title": "Saber App Code",
+        "url": "https://github.com/The-Reuther-Lab/Streamlit_app_grace.git",
+        "description": "Curious how this app was made? Here is the original code, feel free to take look! When creating your own app there are other features you are welcome to unlock. These features are found in the session_state.py file and include a simple code interpreter and additional file downloader."
+    },
+    {
+        "title": "Other Streamlit Apps to Aid Student Learning",
+        "url": "https://molecule-icon-generator.streamlit.app/",
+        "description": "Generate icons of molecules from SMILES, Name, Cas-number, Inchi, InChIKey, load your molecule file or convert a list of SMILES."
     }
+        
 ]
